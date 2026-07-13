@@ -88,19 +88,19 @@
             </div>
         </div>
 
-        <!-- شريط الإنجازات السريع (Milestones Bar) -->
+        <!-- شريط الإنجازات السريع (تم تعديل السطوع والتوهج ليصبح موحداً وساطعاً للكل) -->
         <div class="w-full max-w-4xl mx-auto px-6 relative z-10">
-            <div class="bg-[#0F111A]/80 backdrop-blur-sm border border-[#1A2238] rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center shadow-xl">
+            <div class="bg-[#0F111A]/80 backdrop-blur-sm border border-[#00D2FF]/40 rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center shadow-xl shadow-[#00D2FF]/5">
                 <div>
                     <div class="text-3xl font-bold text-[#00D2FF] neon-glow mb-1" id="count-servers">0</div>
                     <div class="text-xs text-gray-400">إجمالي السيرفرات المحمية بالكامل</div>
                 </div>
                 <div class="border-t md:border-t-0 md:border-r border-[#1A2238] pt-4 md:pt-0 md:pr-6">
-                    <div class="text-3xl font-bold text-green-400 mb-1" id="count-members">0</div>
+                    <div class="text-3xl font-bold text-[#00D2FF] neon-glow mb-1" id="count-members">0</div>
                     <div class="text-xs text-gray-400">أعضاء نشطون تحت حماية بوتاتنا</div>
                 </div>
                 <div class="border-t md:border-t-0 md:border-r border-[#1A2238] pt-4 md:pt-0 md:pr-6">
-                    <div class="text-3xl font-bold text-purple-400 mb-1" id="count-stability">0</div>
+                    <div class="text-3xl font-bold text-[#00D2FF] neon-glow mb-1" id="count-stability">0</div>
                     <div class="text-xs text-gray-400">نسبة استقرار الخوادم والحماية التلقائية</div>
                 </div>
             </div>
@@ -239,79 +239,24 @@
         </div>
     </section>
 
-    <!-- قسم نظام التقييمات وآراء العملاء التلقائي -->
+    <!-- قسم نظام التقييمات التلقائي عبر GitHub المشترك للجميع -->
     <section id="reviews" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
-        <div class="container mx-auto px-6 max-w-5xl">
+        <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white mb-2">آراء العملاء</h2>
-                <p class="text-gray-400 mb-6">ماذا يقول أصحاب السيرفرات عن مهارات عصف البرمجية</p>
+                <p class="text-gray-400 mb-6">شاركنا رأيك أو شاهد مراجعات بقية الأعضاء مباشرة</p>
                 
                 <div class="inline-block bg-[#0F111A] border border-yellow-500/30 p-4 rounded-xl max-w-2xl text-center shadow-md mb-8">
                     <p class="text-sm text-gray-300 leading-relaxed">
                         <i class="fa-solid fa-scale-balanced text-yellow-500 ml-2"></i>
-                        أموالك أمانة، ورأيك أمانة نرجو من جميع عملائنا كتابة تقييماتهم <span class="text-yellow-400 font-bold">بكل ذمة وضمير</span> بعد تجربة الخدمة، سواء كانت تجربتك ممتازة أو واجهت فيها سلبيات؛ فرأيك الصادق هو اللي يطورنا.
+                        التقييمات مدمجة تلقائياً عبر نظام <span class="text-[#00D2FF] font-bold">GitHub</span> الحفظ فوري ومكشوف للجميع لضمان النزاهة والمصداقية الكاملة.
                     </p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                <!-- خانة كتابة التقييم الجديد -->
-                <div class="bg-[#0F111A] border border-[#1A2238] p-6 rounded-2xl md:col-span-1 shadow-xl">
-                    <h3 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-pen-to-square text-[#00D2FF] ml-2"></i>أضف تقييمك الآن</h3>
-                    
-                    <form id="reviewForm" class="space-y-4" onsubmit="submitReview(event)">
-                        <div>
-                            <label class="block text-xs text-gray-400 mb-1">اسمك في الديسكورد:</label>
-                            <input type="text" id="reviewerName" required class="w-full bg-[#0B0C10] border border-[#1A2238] rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-[#00D2FF] transition" placeholder="مثال: Asf_User">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-xs text-gray-400 mb-1">حدد تقييمك بالنجوم:</label>
-                            <div class="flex gap-1 text-xl text-gray-500 cursor-pointer" id="starRating">
-                                <i class="fa-solid fa-star star-btn text-[#FFD700]" data-value="1"></i>
-                                <i class="fa-solid fa-star star-btn text-[#FFD700]" data-value="2"></i>
-                                <i class="fa-solid fa-star star-btn text-[#FFD700]" data-value="3"></i>
-                                <i class="fa-solid fa-star star-btn text-[#FFD700]" data-value="4"></i>
-                                <i class="fa-solid fa-star star-btn text-[#FFD700]" data-value="5"></i>
-                            </div>
-                            <input type="hidden" id="ratingValue" value="5">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs text-gray-400 mb-1">رأيك بالخدمة (بكل ذمة وضمير):</label>
-                            <textarea id="reviewText" required rows="3" class="w-full bg-[#0B0C10] border border-[#1A2238] rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-[#00D2FF] transition resize-none" placeholder="اكتب تجربتك هنا بكل صراحة..."></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full bg-[#00D2FF] text-black text-sm font-bold py-2.5 rounded-xl hover:bg-white transition duration-300 shadow-md">
-                            إرسال التقييم فوراً
-                        </button>
-                    </form>
-                </div>
-
-                <!-- حاوية عرض التقييمات تلقائياً -->
-                <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4" id="reviewsContainer">
-                    <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
-                        <p class="text-xs text-gray-300 italic mb-4">"بوت التيكيتات من أفضل البوتات اللي جربتها بسيرفري سرعة خيالية في الاستجابة والأزرار منسقة بشكل احترافي جداً."</p>
-                        <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
-                            <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
-                            <div>
-                                <h5 class="text-xs font-bold text-white">iX_Knight</h5>
-                                <div class="text-[#FFD700] text-[10px]"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
-                        <p class="text-xs text-gray-300 italic mb-4">"سيرفري كان يجيه لتخريب بشكل مستمر، لكن بعد تفعيل بوت الحماية من عصف صار السيرفر أمان 100%."</p>
-                        <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
-                            <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
-                            <div>
-                                <h5 class="text-xs font-bold text-white">Faisal_99</h5>
-                                <div class="text-[#FFD700] text-[10px]"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- حاوية نظام التقييم السحابي المباشر عبر GitHub -->
+            <div class="bg-[#0F111A] border border-[#1A2238] p-6 rounded-2xl shadow-xl">
+                <div class="giscus"></div>
             </div>
         </div>
     </section>
@@ -334,7 +279,7 @@
                     <p class="text-gray-400 text-sm pr-7 leading-relaxed">بعد إتمام عملية الدفع (شهري أو مؤبد)، سنتواصل معك مباشرة لتسليمك التوكن الخاص بالبوت وإضافته لسيرفرك فوراً مع شرح كامل لكيفية لوحة التحكم والإعدادات.</p>
                 </div>
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
-                    <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> ماذا يشمل الضمان الذهبي بالضبط؟</h4>
+                    <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i>  ماذا يشمل الضمان الذهبي بالضبط؟</h4>
                     <p class="text-gray-400 text-sm pr-7 leading-relaxed">الضمان يشمل أي مشكلة تقنية أو توقف غير متوقع أو خطأ برمجي داخل البوت فريقنا سيتولى حل المشكلة مجاناً وبأسرع وقت، وفي حال عدم رضاك أو تعذر الحل نسترجع لك كامل المبلغ المدفوع فوراً.</p>
                 </div>
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
@@ -378,6 +323,23 @@
         </div>
     </footer>
 
+    <!-- نظام عرض التقييمات التلقائي عبر الـ GitHub (Giscus) -->
+    <script src="https://giscus.app/client.js"
+        data-repo="[اسم_حسابك_في_قيت_هوب]/[اسم_المستودع]"
+        data-repo-id="[رقم_الـ_REPO_ID]"
+        data-category="Announcements"
+        data-category-id="[رقم_الـ_CATEGORY_ID]"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="ar"
+        crossorigin="anonymous"
+        async>
+    </script>
+
     <!-- برمجيات ومؤثرات الموقع التفاعلية JavaScript -->
     <script>
         function closeDhikr() {
@@ -420,7 +382,7 @@
         }
         setInterval(drawMatrix, 30);
 
-        // دالة العداد المتحرك بعد التعديل (تشتغل تلقائياً فور فتح الصفحة)
+        // دالة العداد المتحرك الساطعة والموحدة لكل الإحصائيات
         function animateCounters() {
             const counters = [
                 { id: 'count-servers', target: 671, prefix: '+', suffix: '' },
@@ -441,7 +403,6 @@
 
                 const timer = setInterval(() => {
                     currentStep++;
-                    // تأثير حركة تدرجية بسيطة
                     const progress = currentStep / steps;
                     let currentVal = startValue + (endValue - startValue) * progress;
 
@@ -459,111 +420,9 @@
             });
         }
 
-        // كود نظام اختيار النجوم التفاعلي المصلح والمحمي
-        const stars = document.querySelectorAll('.star-btn');
-        const ratingValueInput = document.getElementById('ratingValue');
-
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                const clickedValue = parseInt(this.getAttribute('data-value'));
-                ratingValueInput.value = clickedValue;
-                
-                stars.forEach(s => {
-                    const starVal = parseInt(s.getAttribute('data-value'));
-                    if(starVal <= clickedValue) {
-                        s.classList.remove('text-gray-600');
-                        s.classList.add('text-[#FFD700]');
-                    } else {
-                        s.classList.remove('text-[#FFD700]');
-                        s.classList.add('text-gray-600');
-                    }
-                });
-            });
-        });
-
-        // تشغيل الوظائف عند تحميل الصفحة بالكامل
         window.onload = function() {
             animateCounters();
-            loadReviews();
         };
-
-        // نظام تخزين وعرض المراجعات التفاعلي
-        function loadReviews() {
-            const reviewsContainer = document.getElementById('reviewsContainer');
-            if (!reviewsContainer) return;
-
-            // المراجعات الافتراضية
-            const defaultReviews = [
-                {
-                    name: "iX_Knight",
-                    text: "بوت التيكيتات من أفضل البوتات اللي جربتها بسيرفري سرعة خيالية في الاستجابة والأزرار منسقة بشكل احترافي جداً.",
-                    rating: 5
-                },
-                {
-                    name: "Faisal_99",
-                    text: "سيرفري كان يجيه لتخريب بشكل مستمر، لكن بعد تفعيل بوت الحماية من عصف صار السيرفر أمان 100%.",
-                    rating: 5
-                }
-            ];
-
-            // جلب التقييمات المضافة من الذاكرة المحلية
-            let savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
-            let allReviews = [...defaultReviews, ...savedReviews];
-
-            // تفريغ الحاوية وإعادة البناء بشكل متناسق
-            reviewsContainer.innerHTML = '';
-            
-            allReviews.forEach(review => {
-                let starsHTML = '';
-                for (let i = 1; i <= 5; i++) {
-                    starsHTML += `<i class="fa-solid fa-star ${i <= review.rating ? 'text-[#FFD700]' : 'text-gray-600'}"></i>`;
-                }
-
-                const card = `
-                    <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
-                        <p class="text-xs text-gray-300 italic mb-4">"${review.text}"</p>
-                        <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
-                            <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
-                            <div>
-                                <h5 class="text-xs font-bold text-white">${review.name}</h5>
-                                <div class="text-[10px]">${starsHTML}</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                reviewsContainer.innerHTML += card;
-            });
-        }
-
-        function submitReview(event) {
-            event.preventDefault();
-            const name = document.getElementById('reviewerName').value;
-            const text = document.getElementById('reviewText').value;
-            const rating = parseInt(document.getElementById('ratingValue').value);
-
-            if (!name || !text) return;
-
-            // مراجعة جديدة
-            const newReview = { name, text, rating };
-
-            // حفظ المراجعة بالذاكرة المحلية
-            let savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
-            savedReviews.unshift(newReview); // إضافتها في البداية لتظهر أولاً
-            localStorage.setItem('userReviews', JSON.stringify(savedReviews));
-
-            // إعادة تعيين الحقول
-            document.getElementById('reviewForm').reset();
-            
-            // إعادة تعيين النجوم لـ 5 افتراضي
-            stars.forEach(s => {
-                s.classList.remove('text-gray-600');
-                s.classList.add('text-[#FFD700]');
-            });
-            document.getElementById('ratingValue').value = 5;
-
-            // تحديث العرض فوراً
-            loadReviews();
-        }
     </script>
 </body>
 </html>
