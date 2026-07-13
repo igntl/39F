@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>39F Studio | بوتات ديسكورد وتصميم مواقع</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -23,6 +26,7 @@
 </head>
 <body class="text-gray-200 antialiased">
 
+    <!-- الهيدر / شريط التنقل -->
     <header class="sticky top-0 z-50 bg-[#0F111A]/90 backdrop-blur-md border-b border-[#1A2238]">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold tracking-wider text-[#00D2FF] neon-glow">39F STUDIO</div>
@@ -30,24 +34,27 @@
                 <a href="#hero" class="hover:text-[#00D2FF] transition">الرئيسية</a>
                 <a href="#web-services" class="hover:text-[#00D2FF] transition">تصميم المواقع</a>
                 <a href="#discord-bots" class="hover:text-[#00D2FF] transition">بوتات الديسكورد</a>
+                <a href="#pricing" class="hover:text-[#00D2FF] transition">الأسعار والباقات</a>
                 <a href="#contact" class="hover:text-[#00D2FF] transition">تواصل معنا</a>
             </nav>
-            <a href="#contact" class="bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#00D2FF] hover:text-black transition duration-300">اطلب الآن</a>
+            <a href="#pricing" class="bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#00D2FF] hover:text-black transition duration-300">الأسعار</a>
         </div>
     </header>
 
+    <!-- القسم الرئيسي (Hero) -->
     <section id="hero" class="relative py-24 md:py-36 bg-gradient-to-b from-[#0F111A] to-[#0B0C10] flex items-center justify-center text-center overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#1A2238_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">نُبرمج خيالك إلى <span class="text-[#00D2FF] neon-glow">واقع رقمي</span></h1>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">مرحباً بك في موقع المطور 39F (عصف). هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.</p>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">مرحباً بك في موقع المطور عصف هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#discord-bots" class="bg-[#00D2FF] text-black px-8 py-3 rounded-xl font-bold hover:bg-white transition duration-300 shadow-lg shadow-[#00D2FF]/20">تصفح البوتات</a>
+                <a href="#pricing" class="bg-[#00D2FF] text-black px-8 py-3 rounded-xl font-bold hover:bg-white transition duration-300 shadow-lg shadow-[#00D2FF]/20">قائمة الأسعار</a>
                 <a href="#web-services" class="bg-[#1A2238] border border-gray-700 px-8 py-3 rounded-xl font-bold hover:border-[#00D2FF] transition duration-300">خدمات المواقع</a>
             </div>
         </div>
     </section>
 
+    <!-- قسم تصميم المواقع -->
     <section id="web-services" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -55,16 +62,19 @@
                 <p class="text-gray-400">واجهات عصرية، لوحات تحكم متكاملة، وسرعة فائقة في التصفح</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- خدمة 1 -->
                 <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl transition duration-300 neon-border">
                     <div class="text-[#00D2FF] text-3xl mb-4"><i class="fa-solid fa-laptop-code"></i></div>
                     <h3 class="text-xl font-bold text-white mb-3">مواقع تعريفية للشركات</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">تصميم صفحات تعريفية (Landing Pages) للمشاريع والشركات بأحدث التقنيات لضمان لفت انتباه عملائك.</p>
                 </div>
+                <!-- خدمة 2 -->
                 <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl transition duration-300 neon-border">
                     <div class="text-[#00D2FF] text-3xl mb-4"><i class="fa-solid fa-sliders"></i></div>
                     <h3 class="text-xl font-bold text-white mb-3">لوحات تحكم متطورة</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">برمجة لوحات تحكم (Dashboards) خاصة لإدارة سيرفرات الديسكورد الخاصة بك أو لإدارة بيانات موقعك بكل سهولة.</p>
                 </div>
+                <!-- خدمة 3 -->
                 <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl transition duration-300 neon-border">
                     <div class="text-[#00D2FF] text-3xl mb-4"><i class="fa-solid fa-gauge-high"></i></div>
                     <h3 class="text-xl font-bold text-white mb-3 font-semibold">تطوير متاجر رقمية</h3>
@@ -74,6 +84,7 @@
         </div>
     </section>
 
+    <!-- قسم بوتات الديسكورد -->
     <section id="discord-bots" class="py-20 bg-[#0F111A] border-t border-[#1A2238]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -82,71 +93,150 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="bg-[#0B0C10] border-2 border-[#00D2FF]/50 p-8 rounded-2xl relative shadow-xl shadow-[#00D2FF]/5">
+                <!-- بوت التيكيتات الخاص بك -->
+                <div class="bg-[#0B0C10] border border-[#1A2238] p-8 rounded-2xl relative">
                     <span class="absolute top-4 left-4 bg-[#00D2FF] text-black text-xs font-bold px-3 py-1 rounded-full">خاص بـ 39F</span>
                     <div class="text-[#5865F2] text-4xl mb-4"><i class="fa-solid fa-ticket"></i></div>
                     <h3 class="text-2xl font-bold text-white mb-3">بوت التيكيتات الذكي (Ticket Bot)</h3>
                     <p class="text-gray-400 text-sm leading-relaxed mb-4">نظام الدعم الفني المتكامل داخل سيرفرك. يتيح للأعضاء فتح تذاكر بضغطة زر عبر الأزرار (Buttons) والقوائم المنسدلة، مع ميزة حفظ السجلات (Logs) وإرسالها مباشرة للإدارة.</p>
-                    <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                    <ul class="text-xs text-gray-500 space-y-2">
                         <li><i class="fa-solid fa-check text-[#00D2FF] ml-2"></i> سريع الاستجابة ودعم الأزرار الحديثة</li>
                         <li><i class="fa-solid fa-check text-[#00D2FF] ml-2"></i> نظام ترانسكربت (نسخ المحادثة) بصيغة HTML</li>
                     </ul>
-                    <a href="#contact" class="inline-block w-full text-center bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">اطلبه الآن</a>
                 </div>
 
-                <div class="bg-[#0B0C10] border border-[#1A2238] p-8 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="text-[#00D2FF] text-4xl mb-4"><i class="fa-solid fa-robot"></i></div>
-                        <h3 class="text-2xl font-bold text-white mb-3">بوتات مخصصة حسب الطلب</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-4">هل تحتاج إلى فكرة بوت معينة؟ نحن نقوم ببرمجة أي بوت يخطر ببالك وتخصيصه بالكامل لسيرفرك:</p>
-                        <div class="space-y-3">
-                            <div class="flex items-center bg-[#0F111A] p-3 rounded-xl border border-[#1A2238]">
-                                <i class="fa-solid fa-shield-halved text-red-400 ml-3 text-lg"></i>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white">بوتات الحماية والإدارة الآلية</h4>
-                                </div>
+                <!-- بوتات إضافية -->
+                <div class="bg-[#0B0C10] border border-[#1A2238] p-8 rounded-2xl">
+                    <div class="text-[#00D2FF] text-4xl mb-4"><i class="fa-solid fa-robot"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-3">بوتات مخصصة وحماية فائقة</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">نقوم بتأمين سيرفرك بالكامل أو برمجة أي فكرة تخطر ببالك وتخصيصها لتناسب احتياجات مجتمعك الرقمي:</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center bg-[#0F111A] p-3 rounded-xl border border-[#1A2238]">
+                            <i class="fa-solid fa-shield-halved text-red-400 ml-3 text-lg"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">بوت الحماية والإدارة التلقائية (Anti-Nuke / Mod)</h4>
                             </div>
-                            <div class="flex items-center bg-[#0F111A] p-3 rounded-xl border border-[#1A2238]">
-                                <i class="fa-solid fa-gamepad text-green-400 ml-3 text-lg"></i>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white">بوتات الألعاب، الفعاليات، ونظام الرتب</h4>
-                                </div>
+                        </div>
+                        <div class="flex items-center bg-[#0F111A] p-3 rounded-xl border border-[#1A2238]">
+                            <i class="fa-solid fa-code text-purple-400 ml-3 text-lg"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">بوتات خاصة ومخصصة حسب الطلب بالكامل</h4>
                             </div>
                         </div>
                     </div>
-                    <a href="#contact" class="inline-block w-full text-center bg-[#1A2238] text-white py-2 rounded-xl font-bold hover:bg-gray-800 border border-transparent mt-6 transition">استفسر عن بوت مخصص</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- قسم الأسعار الجديد -->
+    <section id="pricing" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-2">أسعار الخدمات والباقات</h2>
+                <p class="text-gray-400">اختر الباقة المناسبة لمشروعك وابدأ فوراً</p>
+            </div>
+
+            <!-- أسعار البوتات -->
+            <div class="mb-16">
+                <h3 class="text-xl font-bold text-[#00D2FF] text-center mb-8"><i class="fa-solid fa-robot ml-2"></i> أسعار بوتات الديسكورد</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- باقة تيكت -->
+                    <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl text-center flex flex-col justify-between hover:border-[#00D2FF] transition">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">بوت تيكيتات متكامل</h4>
+                            <div class="text-3xl font-bold text-[#00D2FF] my-4">25 <span class="text-sm text-gray-400">ريال</span></div>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">نظام تذاكر احترافي مستقر 24/7 مع دعم كامل للأزرار واللوقز وحفظ المحادثات التلقائي.</p>
+                        </div>
+                        <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">شراء الآن</a>
+                    </div>
+                    <!-- باقة حماية -->
+                    <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl text-center flex flex-col justify-between hover:border-[#00D2FF] transition">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">بوت حماية متكامل</h4>
+                            <div class="text-3xl font-bold text-[#00D2FF] my-4">25 <span class="text-sm text-gray-400">ريال</span></div>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">أنظمة حماية ضد التخريب (Anti-Nuke) مع تصفية الكلمات وإدارة الرتب والترحيب التلقائي بالأعضاء.</p>
+                        </div>
+                        <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">شراء الآن</a>
+                    </div>
+                    <!-- باقة مخصص -->
+                    <div class="bg-[#0F111A] border border-purple-500/30 p-8 rounded-2xl text-center flex flex-col justify-between hover:border-purple-500 transition">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">بوت خاص (حسب الطلب)</h4>
+                            <div class="text-2xl font-bold text-purple-400 my-5">يحدد لاحقاً</div>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">برمجة فكرة مخصصة بالكامل من الصفر. يتحدد السعر بناءً على الميزات والمواصفات المطلوبة.</p>
+                        </div>
+                        <a href="https://discord.gg/8gEa7cxvBN" target="_blank" class="block w-full bg-[#1A2238] border border-purple-500 text-purple-400 py-2 rounded-xl font-bold hover:bg-purple-500 hover:text-white transition">افتح تذكرة طلب</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المقترحات الإضافية: باقات تصميم المواقع -->
+            <div>
+                <h3 class="text-xl font-bold text-[#00D2FF] text-center mb-8"><i class="fa-solid fa-code ml-2"></i> باقات تصميم المواقع (مقترحة)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <!-- باقة صفحة تعريفية -->
+                    <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">موقع تعريفي (Landing Page)</h4>
+                            <p class="text-gray-400 text-xs mb-4">مثالي للمشاريع الناشئة ومطوري البوتات</p>
+                            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                                <li><i class="fa-solid fa-check text-[#00D2FF] ml-2"></i> صفحة واحدة بتصميم عصري ومتجاوب</li>
+                                <li><i class="fa-solid fa-check text-[#00D2FF] ml-2"></i> ربط مباشر لحسابات التواصل والواتساب</li>
+                                <li><i class="fa-solid fa-check text-[#00D2FF] ml-2"></i> استضافة مجانية على GitHub</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full text-center bg-[#1A2238] text-white py-2 rounded-xl font-bold hover:bg-gray-800 transition">استفسر عن السعر</a>
+                    </div>
+                    <!-- باقة متجر أو لوحة تحكم -->
+                    <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">متجر رقمي / لوحة تحكم متطورة</h4>
+                            <p class="text-gray-400 text-xs mb-4">للمجتمعات الكبيرة وأصحاب السيرفرات الضخمة</p>
+                            <ul class="text-sm text-gray-400 space-y-2 mb-6">
+                                <li><i class="fa-solid fa-check text-[#00D2FF] ml-2"></i> ربط البوت بقاعدة بيانات وموقع ويب</li>
+                                <li><i class="fa-solid fa-check text-[#00D2FF] ml-2"></i> لوحة تحكم لتعديل إعدادات السيرفر فوراُ</li>
+                                <li><i class="fa-solid fa-check text-[#00D2FF] ml-2"></i> دعم بوابات الدفع الإلكتروني الآمنة</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full text-center bg-[#1A2238] text-white py-2 rounded-xl font-bold hover:bg-gray-800 transition">استفسر عن السعر</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم طرق التواصل -->
     <section id="contact" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6 text-center max-w-3xl">
             <h2 class="text-3xl font-bold text-white mb-2">ابدأ مشروعك الآن مع 39F</h2>
             <p class="text-gray-400 mb-12">تواصل معي مباشرة عبر إحدى المنصات التالية لمناقشة تفاصيل مشروعك</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <a href="https://discord.com" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-[#5865F2]/40 rounded-2xl hover:border-[#5865F2] hover:bg-[#5865F2]/10 transition duration-300 group">
+                <!-- ديسكورد -->
+                <a href="https://discord.gg/8gEa7cxvBN" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-[#5865F2]/40 rounded-2xl hover:border-[#5865F2] hover:bg-[#5865F2]/10 transition duration-300 group">
                     <i class="fa-brands fa-discord text-3xl text-[#5865F2] mb-3 group-hover:scale-110 transition"></i>
                     <span class="text-white font-bold block mb-1">Discord</span>
                     <span class="text-xs text-gray-400">تواصل عبر السيرفر</span>
                 </a>
-                <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-green-500/40 rounded-2xl hover:border-green-500 hover:bg-green-500/10 transition duration-300 group">
+                <!-- واتساب -->
+                <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-green-500/40 rounded-2xl hover:border-green-500 hover:bg-green-500/10 transition duration-300 group">
                     <i class="fa-brands fa-whatsapp text-3xl text-green-500 mb-3 group-hover:scale-110 transition"></i>
                     <span class="text-white font-bold block mb-1">WhatsApp</span>
                     <span class="text-xs text-gray-400">محادثة فورية وتفاصيل سريعة</span>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-pink-500/40 rounded-2xl hover:border-pink-500 hover:bg-pink-500/10 transition duration-300 group">
+                <!-- انستقرام -->
+                <a href="https://www.instagram.com/1g_i?igsh=MXFxcDNpYjBycWdlZQ%3D%3D&utm_source=qr" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-pink-500/40 rounded-2xl hover:border-pink-500 hover:bg-pink-500/10 transition duration-300 group">
                     <i class="fa-brands fa-instagram text-3xl text-pink-500 mb-3 group-hover:scale-110 transition"></i>
                     <span class="text-white font-bold block mb-1">Instagram</span>
                     <span class="text-xs text-gray-400">تابع أعمالنا وجديدنا</span>
                 </a>
             </div>
-            
-            <p class="text-xs text-gray-500 mt-8"><i class="fa-solid fa-info-circle ml-1"></i> ملاحظة: تذكر استبدال روابط التواصل بروابط حساباتك الشخصية الحقيقية داخل الكود.</p>
         </div>
     </section>
 
+    <!-- الفوتر -->
     <footer class="bg-[#0F111A] py-6 text-center text-xs text-gray-500 border-t border-[#1A2238]">
         <div class="container mx-auto px-6">
             <p>&copy; 2026 39F Studio. جميع الحقوق محفوظة.</p>
