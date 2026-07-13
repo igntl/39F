@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الصفحة الرئيسية</title>
-    <!-- Google Fonts: Cairo & Tajawal -->
+    <!-- خطوط جوجل: القاهرة والتاجول -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -60,7 +60,7 @@
             margin-bottom: 40px;
         }
 
-        /* شبكة الإحصائيات بألوانها الساطعة */
+        /* شبكة الإحصائيات بالألوان الساطعة الجديدة */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -81,7 +81,7 @@
             transform: translateY(-5px);
         }
 
-        /* تنسيق الأرقام الساطعة بوهج خفيف */
+        /* تنسيق الأرقام الساطعة بوهج النيون */
         .stat-number {
             font-size: 3.5rem;
             font-weight: 900;
@@ -90,7 +90,6 @@
             line-height: 1;
         }
 
-        /* تأثيرات النيون */
         .stat-blue {
             color: var(--color-blue);
             text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
@@ -112,7 +111,7 @@
             font-weight: 600;
         }
 
-        /* قسم الأسئلة الشائعة (FAQ) */
+        /* قسم الأسئلة الشائعة (FAQ) التفاعلي */
         .faq-section {
             margin-bottom: 60px;
         }
@@ -192,7 +191,7 @@
             font-weight: bold;
         }
 
-        /* حاوية تعليقات Giscus */
+        /* حاوية تعليقات Giscus وثباتها */
         .giscus-container {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -201,7 +200,7 @@
             min-height: 150px;
         }
 
-        /* صندوق التذكير الطيب التفاعلي */
+        /* نافذة التذكير الطيب أسفل الشاشة */
         .toast-reminder {
             position: fixed;
             bottom: 20px;
@@ -266,7 +265,7 @@
 
     <div class="container">
         
-        <!-- قسم الإحصائيات المحدث بالألوان الساطعة والمضيئة -->
+        <!-- قسم الإحصائيات بالأرقام الساطعة والمضيئة -->
         <h2 class="section-title">إحصائياتنا المميزة</h2>
         <p class="section-subtitle">نظرة سريعة على الإنجازات والتقدم بالألوان الساطعة الجديدة</p>
         
@@ -299,7 +298,7 @@
                     <div class="faq-answer">نقدم خدمات متكاملة تشمل تصميم وتطوير المواقع الإلكترونية، برمجة الأنظمة الخاصة، وتحسين تجربة المستخدم بأعلى معايير الجودة.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">كم تستغرق مدة تنفيذ المشاريع؟</div>
+                    <div class="faq-question">كم تستغرق مدة تنفيذ المشاريع?</div>
                     <div class="faq-answer">تختلف المدة حسب حجم ومتطلبات المشروع، ولكن في المتوسط تستغرق المشاريع الصغيرة من أسبوع إلى أسبوعين، والمشاريع المتوسطة من 3 إلى 6 أسابيع.</div>
                 </div>
                 <div class="faq-item">
@@ -318,9 +317,9 @@
                 ⚖️ التقييمات مدمجة تلقائياً عبر نظام <a href="https://github.com" target="_blank">GitHub</a> الحفظ فوري ومكشوف للجميع لضمان النزاهة والمصداقية الكاملة.
             </div>
 
-            <!-- حاوية تعليقات Giscus -->
+            <!-- حاوية تعليقات Giscus المحدثة -->
             <div class="giscus-container">
-                <!-- تذكر استبدال الحقول أدناه ببيانات مستودع GitHub الخاص بك لتعمل التعليقات بدون أخطاء -->
+                <!-- تذكر استبدال الحقول أدناه ببيانات مستودع GitHub الخاص بك وتفعيل الـ Discussions ليعمل بنجاح -->
                 <script src="https://giscus.app/client.js"
                         data-repo="[اسم_المستخدم_الخاص_بك]/[اسم_المستودع_الخاص_بك]"
                         data-repo-id="[معرف_المستودع]"
@@ -356,10 +355,10 @@
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
                 
-                // إغلاق جميع الأسئلة المفتوحة أولاً
+                // إغلاق جميع الأسئلة المفتوحة أولاً لقفل الأكورديون
                 faqItems.forEach(i => i.classList.remove('active'));
                 
-                // فتح السؤال الحالي إذا لم يكن مفتوحاً
+                // فتح السؤال الحالي إذا لم يكن مفتوحاً بالفعل
                 if (!isActive) {
                     item.classList.add('active');
                 }
