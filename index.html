@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المطور عصف | بوتات ديسكورد وتصميم مواقع</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* تفعيل التمرير السلس بين الأقسام */
@@ -44,7 +41,6 @@
 </head>
 <body class="text-gray-200 antialiased">
 
-    <!-- نافذة التذكير بذكر الله (Popup) -->
     <div id="dhikr-popup" class="fixed bottom-6 right-6 z-50 max-w-sm w-full mx-auto bg-[#0F111A] border-2 border-[#00D2FF]/30 p-5 rounded-2xl shadow-2xl shadow-[#00D2FF]/10 flex items-start gap-4 transition-all duration-500 transform translate-y-0 opacity-100">
         <div class="text-[#00D2FF] text-2xl mt-1">
             <i class="fa-solid fa-heart"></i>
@@ -58,10 +54,9 @@
         </button>
     </div>
 
-    <!-- الهيدر / شريط التنقل -->
     <header class="sticky top-0 z-40 bg-[#0F111A]/90 backdrop-blur-md border-b border-[#1A2238]">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider text-[#00D2FF] neon-glow">39F</div>
+            <div class="text-2xl font-bold tracking-wider text-[#00D2FF] neon-glow">39F STUDIO</div>
             <nav class="hidden md:flex space-x-reverse space-x-8 text-sm font-medium">
                 <a href="#hero" class="hover:text-[#00D2FF] transition">الرئيسية</a>
                 <a href="#web-services" class="hover:text-[#00D2FF] transition">تصميم المواقع</a>
@@ -75,42 +70,38 @@
         </div>
     </header>
 
-    <!-- القسم الرئيسي (Hero) مع خلفية مطر الأكواد وشريط الإنجازات -->
     <section id="hero" class="relative py-24 md:py-36 bg-gradient-to-b from-[#0F111A] to-[#0B0C10] flex flex-col items-center justify-center text-center overflow-hidden">
-        <!-- حاوية المطر التفاعلي -->
         <div id="canvas-container">
             <canvas id="matrix-canvas"></canvas>
         </div>
         
         <div class="container mx-auto px-6 relative z-10">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">نُبرمج خيالك إلى <span class="text-[#00D2FF] neon-glow">واقع رقمي</span></h1>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">مرحباً بك في موقع المطور عصف. هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.</p>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">مرحباً بك في موقع المطور عصف هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.</p>
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <a href="#pricing" class="bg-[#00D2FF] text-black px-8 py-3 rounded-xl font-bold hover:bg-white transition duration-300 shadow-lg shadow-[#00D2FF]/20">قائمة الأسعار</a>
                 <a href="#web-services" class="bg-[#1A2238] border border-gray-700 px-8 py-3 rounded-xl font-bold hover:border-[#00D2FF] transition duration-300">خدمات المواقع</a>
             </div>
         </div>
 
-        <!-- شريط الإنجازات السريع (Milestones Bar) -->
         <div class="w-full max-w-4xl mx-auto px-6 relative z-10">
             <div class="bg-[#0F111A]/80 backdrop-blur-sm border border-[#1A2238] rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center shadow-xl">
                 <div>
-                    <div class="text-3xl font-bold text-[#00D2FF] neon-glow mb-1">+4,500</div>
+                    <div class="text-3xl font-bold text-[#00D2FF] neon-glow mb-1" id="count-servers">0</div>
                     <div class="text-xs text-gray-400">إجمالي السيرفرات المحمية بالكامل</div>
                 </div>
                 <div class="border-t md:border-t-0 md:border-r border-[#1A2238] pt-4 md:pt-0 md:pr-6">
-                    <div class="text-3xl font-bold text-green-400 mb-1">+120,000</div>
+                    <div class="text-3xl font-bold text-green-400 mb-1" id="count-members">0</div>
                     <div class="text-xs text-gray-400">أعضاء نشطون تحت حماية بوتاتنا</div>
                 </div>
                 <div class="border-t md:border-t-0 md:border-r border-[#1A2238] pt-4 md:pt-0 md:pr-6">
-                    <div class="text-3xl font-bold text-purple-400 mb-1">99.9%</div>
+                    <div class="text-3xl font-bold text-purple-400 mb-1" id="count-stability">0</div>
                     <div class="text-xs text-gray-400">نسبة استقرار الخوادم والحماية التلقائية</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم تصميم المواقع -->
     <section id="web-services" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -118,19 +109,16 @@
                 <p class="text-gray-400">واجهات عصرية، لوحات تحكم متكاملة، وسرعة فائقة في التصفح</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- خدمة 1 -->
                 <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl transition duration-300 neon-border">
                     <div class="text-[#00D2FF] text-3xl mb-4"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h3 class="text-xl font-bold text-white mb-3">م مواقع تعريفية للشركات</h3>
+                    <h3 class="text-xl font-bold text-white mb-3">مواقع تعريفية للشركات</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">تصميم صفحات تعريفية (Landing Pages) للمشاريع والشركات بأحدث التقنيات لضمان لفت انتباه عملائك.</p>
                 </div>
-                <!-- خدمة 2 -->
                 <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl transition duration-300 neon-border">
                     <div class="text-[#00D2FF] text-3xl mb-4"><i class="fa-solid fa-sliders"></i></div>
                     <h3 class="text-xl font-bold text-white mb-3">لوحات تحكم متطورة</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">برمجة لوحات تحكم (Dashboards) خاصة لإدارة سيرفرات الديسكورد الخاصة بك أو لإدارة بيانات موقعك بكل سهولة.</p>
                 </div>
-                <!-- خدمة 3 -->
                 <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl transition duration-300 neon-border">
                     <div class="text-[#00D2FF] text-3xl mb-4"><i class="fa-solid fa-gauge-high"></i></div>
                     <h3 class="text-xl font-bold text-white mb-3 font-semibold">تطوير متاجر رقمية</h3>
@@ -140,7 +128,6 @@
         </div>
     </section>
 
-    <!-- قسم بوتات الديسكورد -->
     <section id="discord-bots" class="py-20 bg-[#0F111A] border-t border-[#1A2238]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -149,7 +136,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- بوت التيكيتات الخاص بك -->
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-8 rounded-2xl relative">
                     <span class="absolute top-4 left-4 bg-[#00D2FF] text-black text-xs font-bold px-3 py-1 rounded-full">تطوير عصف</span>
                     <div class="text-[#5865F2] text-4xl mb-4"><i class="fa-solid fa-ticket"></i></div>
@@ -161,7 +147,6 @@
                     </ul>
                 </div>
 
-                <!-- بوتات إضافية -->
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-8 rounded-2xl">
                     <div class="text-[#00D2FF] text-4xl mb-4"><i class="fa-solid fa-robot"></i></div>
                     <h3 class="text-2xl font-bold text-white mb-3">بوتات مخصصة وحماية فائقة</h3>
@@ -185,7 +170,6 @@
         </div>
     </section>
 
-    <!-- قسم الأسعار -->
     <section id="pricing" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
@@ -193,23 +177,20 @@
                 <p class="text-gray-400">اختر نوع الاشتراك المناسب لسيرفرك</p>
             </div>
 
-            <!-- بنر الضمان الذهبي -->
             <div class="max-w-4xl mx-auto mb-16 bg-gradient-to-r from-[#1A2238] via-[#161d30] to-[#1A2238] border-2 border-[#FFD700]/40 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-xl shadow-[#FFD700]/5 text-center md:text-right">
                 <div class="flex items-center flex-col md:flex-row gap-4 mb-4 md:mb-0">
                     <div class="text-[#FFD700] text-4xl gold-glow"><i class="fa-solid fa-shield-cat"></i></div>
                     <div>
                         <h4 class="text-lg font-bold text-[#FFD700] mb-1">الضمان الذهبي من عصف</h4>
-                        <p class="text-gray-300 text-sm">راحتك تهمنا! أي مشكلة أو خلل برمجي يواجهه العميل في البوت نلتزم بحله فوراً، أو نسترجع لك المبلغ كاملاً بدون أي تعقيد.</p>
+                        <p class="text-gray-300 text-sm">راحتك تهمنا أي مشكلة أو خلل برمجي يواجهه العميل في البوت نلتزم بحله فوراً، أو نسترجع لك المبلغ كاملاً بدون أي تعقيد.</p>
                     </div>
                 </div>
                 <span class="bg-[#FFD700] text-black font-bold text-xs px-4 py-2 rounded-xl whitespace-nowrap">مضمون 100%</span>
             </div>
 
-            <!-- أسعار البوتات المحدثة (25 ريال) -->
             <div class="mb-16">
                 <h3 class="text-xl font-bold text-[#00D2FF] text-center mb-8"><i class="fa-solid fa-robot ml-2"></i> خطط اشتراك البوتات</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- باقة تيكت -->
                     <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl text-center flex flex-col justify-between hover:border-[#00D2FF] transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت تيكيتات متكامل</h4>
@@ -222,7 +203,6 @@
                         </div>
                         <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">طلب البوت</a>
                     </div>
-                    <!-- باقة حماية -->
                     <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl text-center flex flex-col justify-between hover:border-[#00D2FF] transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت حماية متكامل</h4>
@@ -235,7 +215,6 @@
                         </div>
                         <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">طلب البوت</a>
                     </div>
-                    <!-- باقة مخصص -->
                     <div class="bg-[#0F111A] border border-purple-500/30 p-8 rounded-2xl text-center flex flex-col justify-between hover:border-purple-500 transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت خاص (حسب الطلب)</h4>
@@ -251,7 +230,6 @@
         </div>
     </section>
 
-    <!-- قسم نظام التقييمات وآراء العملاء التلقائي -->
     <section id="reviews" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6 max-w-5xl">
             
@@ -259,24 +237,22 @@
                 <h2 class="text-3xl font-bold text-white mb-2">آراء العملاء</h2>
                 <p class="text-gray-400 mb-6">ماذا يقول أصحاب السيرفرات عن مهارات عصف البرمجية</p>
                 
-                <!-- رسالة الذمة والضمير -->
                 <div class="inline-block bg-[#0F111A] border border-yellow-500/30 p-4 rounded-xl max-w-2xl text-center shadow-md mb-8">
                     <p class="text-sm text-gray-300 leading-relaxed">
                         <i class="fa-solid fa-scale-balanced text-yellow-500 ml-2"></i>
-                        أموالك أمانة، ورأيك أمانة أعمق! نرجو من جميع عملائنا كتابة تقييماتهم <span class="text-yellow-400 font-bold">بكل ذمة وضمير</span> بعد تجربة الخدمة، سواء كانت تجربتك ممتازة أو واجهت فيها سلبيات؛ فرأيك الصادق هو ما يطورنا.
+                        أموالك أمانة، ورأيك أمانة نرجو من جميع عملائنا كتابة تقييماتهم <span class="text-yellow-400 font-bold">بكل ذمة وضمير</span> بعد تجربة الخدمة، سواء كانت تجربتك ممتازة أو واجهت فيها سلبيات؛ فرأيك الصادق هو اللي يطورنا.
                     </p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                 
-                <!-- خانة كتابة التقييم الجديد -->
                 <div class="bg-[#0F111A] border border-[#1A2238] p-6 rounded-2xl md:col-span-1 shadow-xl">
                     <h3 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-pen-to-square text-[#00D2FF] ml-2"></i>أضف تقييمك الآن</h3>
                     
                     <form id="reviewForm" class="space-y-4" onsubmit="submitReview(event)">
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">اسمك في الديسكورد:</label>
+                            <label class="block text-xs text-gray-400 mb-1">اسمك:</label>
                             <input type="text" id="reviewerName" required class="w-full bg-[#0B0C10] border border-[#1A2238] rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-[#00D2FF] transition" placeholder="مثال: Asf_User">
                         </div>
                         
@@ -303,11 +279,9 @@
                     </form>
                 </div>
 
-                <!-- حاوية عرض التقييمات تلقائياً -->
                 <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4" id="reviewsContainer">
-                    <!-- التقييمات الافتراضية الثابتة للموقع -->
                     <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
-                        <p class="text-xs text-gray-300 italic mb-4">"بوت التيكيتات من أفضل البوتات اللي جربتها بسيرفري، سرعة خيالية في الاستجابة والأزرار منسقة بشكل احترافي جداً."</p>
+                        <p class="text-xs text-gray-300 italic mb-4">"بوت التيكيتات من أفضل البوتات اللي جربتها بسيرفري سرعة خيالية في الاستجابة والأزرار منسقة بشكل احترافي جداً."</p>
                         <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
                             <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
                             <div>
@@ -318,7 +292,7 @@
                     </div>
 
                     <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
-                        <p class="text-xs text-gray-300 italic mb-4">"سيرفري كان يتعرض للتخريب بشكل مستمر، لكن بعد تفعيل بوت الحماية من عصف صار السيرفر أمان 100%."</p>
+                        <p class="text-xs text-gray-300 italic mb-4">"سيرفري كان يجيه تخريب بشكل مستمر لكن بعد تفعيل بوت الحماية من عصف صار السيرفر أمان 100%."</p>
                         <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
                             <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
                             <div>
@@ -333,7 +307,6 @@
         </div>
     </section>
 
-    <!-- قسم الأسئلة الشائعة (FAQ) -->
     <section id="faq" class="py-20 bg-[#0F111A] border-t border-[#1A2238]">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-16">
@@ -342,50 +315,42 @@
             </div>
 
             <div class="space-y-6">
-                <!-- سؤال 1 -->
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
                     <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> هل البوتات تعمل على مدار 24 ساعة بدون انقطاع؟</h4>
                     <p class="text-gray-400 text-sm pr-7 leading-relaxed">نعم، جميع البوتات يتم استضافتها على خوادم خاصة قوية ومستقرة تضمن عمل البوتات بنسبة 99.9% طوال اليوم والأسبوع وبدون أي بطء في الاستجابة.</p>
                 </div>
-                <!-- سؤال 2 -->
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
                     <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> كيف يمكنني تفعيل البوت بعد الشراء؟</h4>
                     <p class="text-gray-400 text-sm pr-7 leading-relaxed">بعد إتمام عملية الدفع (شهري أو مؤبد)، سنتواصل معك مباشرة لتسليمك التوكن الخاص بالبوت وإضافته لسيرفرك فوراً مع شرح كامل لكيفية لوحة التحكم والإعدادات.</p>
                 </div>
-                <!-- سؤال 3 -->
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
                     <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> ماذا يشمل الضمان الذهبي بالضبط؟</h4>
-                    <p class="text-gray-400 text-sm pr-7 leading-relaxed">الضمان يشمل أي مشكلة تقنية أو توقف غير متوقع أو خطأ برمي داخل البوت. فريقنا سيتولى حل المشكلة مجاناً وبأسرع وقت، وفي حال عدم رضاك أو تعذر الحل نسترجع لك كامل المبلغ المدفوع فوراً.</p>
+                    <p class="text-gray-400 text-sm pr-7 leading-relaxed">الضمان يشمل أي مشكلة تقنية أو توقف غير متوقع أو خطأ برمجي داخل البوت فريقنا سيتولى حل المشكلة مجاناً وبأسرع وقت، وفي حال عدم رضاك أو تعذر الحل نسترجع لك كامل المبلغ المدفوع فوراً.</p>
                 </div>
-                <!-- سؤال 4 -->
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
                     <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> هل يمكنني الترقية من الاشتراك الشهري إلى المؤبد لاحقاً؟</h4>
-                    <p class="text-gray-400 text-sm pr-7 leading-relaxed">بالتأكيد! يمكنك تجربة البوت بالاشتراك الشهري أولاً، وفي أي وقت ترغب فيه بتحويله إلى اشتراك مؤبد مدى الحياة، يمكنك التواصل معنا وترقية خطتك بكل سهولة.</p>
+                    <p class="text-gray-400 text-sm pr-7 leading-relaxed">بالتأكيد يمكنك تجربة البوت بالاشتراك الشهري أولاً، وفي أي وقت ترغب فيه بتحويله إلى اشتراك مؤبد مدى الحياة، يمكنك التواصل معنا وترقية خطتك بكل سهولة.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم طرق التواصل -->
     <section id="contact" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6 text-center max-w-3xl">
             <h2 class="text-3xl font-bold text-white mb-2">ابدأ مشروعك الآن مع عصف</h2>
             <p class="text-gray-400 mb-12">تواصل معي مباشرة عبر إحدى المنصات التالية لمناقشة تفاصيل مشروعك</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- ديسكورد -->
                 <a href="https://discord.gg/8gEa7cxvBN" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-[#5865F2]/40 rounded-2xl hover:border-[#5865F2] hover:bg-[#5865F2]/10 transition duration-300 group">
                     <i class="fa-brands fa-discord text-3xl text-[#5865F2] mb-3 group-hover:scale-110 transition"></i>
                     <span class="text-white font-bold block mb-1">Discord</span>
                     <span class="text-xs text-gray-400">تواصل عبر السيرفر</span>
                 </a>
-                <!-- واتساب -->
                 <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-green-500/40 rounded-2xl hover:border-green-500 hover:bg-green-500/10 transition duration-300 group">
                     <i class="fa-brands fa-whatsapp text-3xl text-green-500 mb-3 group-hover:scale-110 transition"></i>
                     <span class="text-white font-bold block mb-1">WhatsApp</span>
                     <span class="text-xs text-gray-400">محادثة فورية وتفاصيل سريعة</span>
                 </a>
-                <!-- انستقرام -->
                 <a href="https://www.instagram.com/1g_i?igsh=MXFxcDNpYjBycWdlZQ%3D%3D&utm_source=qr" target="_blank" class="flex flex-col items-center justify-center p-6 bg-[#1A2238] border border-pink-500/40 rounded-2xl hover:border-pink-500 hover:bg-pink-500/10 transition duration-300 group">
                     <i class="fa-brands fa-instagram text-3xl text-pink-500 mb-3 group-hover:scale-110 transition"></i>
                     <span class="text-white font-bold block mb-1">Instagram</span>
@@ -395,165 +360,4 @@
         </div>
     </section>
 
-    <!-- الفوتر -->
-    <footer class="bg-[#0F111A] py-6 text-center text-xs text-gray-500 border-t border-[#1A2238]">
-        <div class="container mx-auto px-6">
-            <p>&copy; 2026 عصف. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
-
-    <!-- برمجيات ومؤثرات الموقع التفاعلية JavaScript -->
-    <script>
-        // إغلاق نافذة التذكير (Popup)
-        function closeDhikr() {
-            const popup = document.getElementById('dhikr-popup');
-            popup.style.opacity = '0';
-            popup.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                popup.style.display = 'none';
-            }, 500);
-        }
-
-        // كود تشغيل تأثير مطر الأكواد (Matrix Code Rain)
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-        const container = document.getElementById('canvas-container');
-
-        function resizeCanvas() {
-            canvas.width = container.offsetWidth;
-            canvas.height = container.offsetHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const alphabet = "0101011001101010101001011101010011001101010101";
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const rainDrops = [];
-
-        for (let x = 0; x < columns; x++) {
-            rainDrops[x] = 1;
-        }
-
-        function drawMatrix() {
-            ctx.fillStyle = 'rgba(11, 12, 16, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#00D2FF';
-            ctx.font = fontSize + 'px monospace';
-
-            for (let i = 0; i < rainDrops.length; i++) {
-                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-
-                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    rainDrops[i] = 0;
-                }
-                rainDrops[i]++;
-            }
-        }
-        setInterval(drawMatrix, 30);
-
-        // تفعيل نظام اختيار النجوم التفاعلي للتقييمات
-        const stars = document.querySelectorAll('.star-btn');
-        const ratingValueInput = document.getElementById('ratingValue');
-
-        stars.forEach(star => {
-            star.addEventListener('click', () => {
-                const value = star.getAttribute('data-value');
-                ratingValueInput.value = value;
-                stars.forEach(s => {
-                    if(s.getAttribute('data-value') <= value) {
-                        s.classList.remove('text-gray-600');
-                        s.classList.add('text-[#FFD700]');
-                    } else {
-                        s.classList.remove('text-[#FFD700]');
-                        s.classList.add('text-gray-600');
-                    }
-                });
-            });
-        });
-
-        // تلوين النجوم افتراضياً عند التحميل
-        stars.forEach(s => s.classList.add('text-[#FFD700]'));
-
-        // تحميل التقييمات المخزنة محلياً عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', loadReviews);
-
-        function loadReviews() {
-            const savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
-            const container = document.getElementById('reviewsContainer');
-            
-            savedReviews.forEach(review => {
-                container.insertAdjacentHTML('afterbegin', createReviewCard(review.name, review.text, review.rating));
-            });
-        }
-
-        function createReviewCard(name, text, rating) {
-            let starsHtml = '';
-            for(let i=0; i<5; i++) {
-                starsHtml += i < rating ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star text-gray-600"></i>';
-            }
-            return `
-                <div class="bg-[#0F111A] border border-green-500/20 p-5 rounded-2xl flex flex-col justify-between">
-                    <p class="text-xs text-gray-300 italic mb-4">"${text}"</p>
-                    <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
-                        <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
-                        <div>
-                            <h5 class="text-xs font-bold text-white">${name}</h5>
-                            <div class="text-[#FFD700] text-[10px]">${starsHtml}</div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // إرسال وحفظ التقييم الجديد تلقائياً
-        function submitReview(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('reviewerName').value;
-            const text = document.getElementById('reviewText').value;
-            const rating = parseInt(ratingValueInput.value);
-
-            // 1. عرض التقييم مباشرة في المتصفح الحالي
-            const container = document.getElementById('reviewsContainer');
-            container.insertAdjacentHTML('afterbegin', createReviewCard(name, text, rating));
-
-            // 2. الحفظ التلقائي في LocalStorage
-            const savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
-            savedReviews.push({ name, text, rating });
-            localStorage.setItem('userReviews', JSON.stringify(savedReviews));
-
-            // 3. (اختياري) إرسال التقييم كرسالة فخمة إلى ديسكورد عبر Webhook
-            const discordWebhookUrl = "ضع_رابط_الويب_هوك_هنا_إذا_تبغى_توصلك_بالديسكورد";
-            if (discordWebhookUrl && !discordWebhookUrl.includes("ضع_رابط")) {
-                fetch(discordWebhookUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        embeds: [{
-                            title: "⭐ تقييم جديد في الموقع بذمة وضمير!",
-                            color: 5763719,
-                            fields: [
-                                { name: "العميل", value: name, inline: true },
-                                { name: "التقييم", value: "⭐".repeat(rating), inline: true },
-                                { name: "الرأي الصادق", value: text }
-                            ],
-                            timestamp: new Date()
-                        }]
-                    })
-                }).catch(err => console.log("Discord Webhook Error"));
-            }
-
-            // إعادة تعيين النموذج بعد الإرسال بنجاح
-            document.getElementById('reviewForm').reset();
-            stars.forEach(s => s.classList.add('text-[#FFD700]'));
-            ratingValueInput.value = 5;
-
-            alert('تم نشر تقييمك تلقائياً وبكل أمانة! شكراً لك على مشاركتنا رأيك الصادق.');
-        }
-    </script>
-
-</body>
-</html>
+    <footer class="bg-[#0F111A] py-6 text-center text-xs text-gray-500 border-t border-
