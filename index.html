@@ -487,55 +487,82 @@
             loadReviews();
         };
 
+        // نظام تخزين وعرض المراجعات التفاعلي
         function loadReviews() {
-            const savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
-            const container = document.getElementById('reviewsContainer');
-            savedReviews.forEach(review => {
-                container.insertAdjacentHTML('afterbegin', createReviewCard(review.name, review.text, review.rating));
-            });
-        }
+            const reviewsContainer = document.getElementById('reviewsContainer');
+            if (!reviewsContainer) return;
 
-        function createReviewCard(name, text, rating) {
-            let starsHtml = '';
-            for(let i=1; i<=5; i++) {
-                starsHtml += i <= rating ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star text-gray-600"></i>';
-            }
-            return `
-                <div class="bg-[#0F111A] border border-green-500/20 p-5 rounded-2xl flex flex-col justify-between">
-                    <p class="text-xs text-gray-300 italic mb-4">"${text}"</p>
-                    <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
-                        <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
-                        <div>
-                            <h5 class="text-xs font-bold text-white">${name}</h5>
-                            <div class="text-[#FFD700] text-[10px]">${starsHtml}</div>
+            // المراجعات الافتراضية
+            const defaultReviews = [
+                {
+                    name: "iX_Knight",
+                    text: "بوت التيكيتات من أفضل البوتات اللي جربتها بسيرفري سرعة خيالية في الاستجابة والأزرار منسقة بشكل احترافي جداً.",
+                    rating: 5
+                },
+                {
+                    name: "Faisal_99",
+                    text: "سيرفري كان يجيه لتخريب بشكل مستمر، لكن بعد تفعيل بوت الحماية من عصف صار السيرفر أمان 100%.",
+                    rating: 5
+                }
+            ];
+
+            // جلب التقييمات المضافة من الذاكرة المحلية
+            let savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+            let allReviews = [...defaultReviews, ...savedReviews];
+
+            // تفريغ الحاوية وإعادة البناء بشكل متناسق
+            reviewsContainer.innerHTML = '';
+            
+            allReviews.forEach(review => {
+                let starsHTML = '';
+                for (let i = 1; i <= 5; i++) {
+                    starsHTML += `<i class="fa-solid fa-star ${i <= review.rating ? 'text-[#FFD700]' : 'text-gray-600'}"></i>`;
+                }
+
+                const card = `
+                    <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
+                        <p class="text-xs text-gray-300 italic mb-4">"${review.text}"</p>
+                        <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
+                            <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
+                            <div>
+                                <h5 class="text-xs font-bold text-white">${review.name}</h5>
+                                <div class="text-[10px]">${starsHTML}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
+                `;
+                reviewsContainer.innerHTML += card;
+            });
         }
 
         function submitReview(event) {
             event.preventDefault();
             const name = document.getElementById('reviewerName').value;
             const text = document.getElementById('reviewText').value;
-            const rating = parseInt(ratingValueInput.value);
+            const rating = parseInt(document.getElementById('ratingValue').value);
 
-            const container = document.getElementById('reviewsContainer');
-            container.insertAdjacentHTML('afterbegin', createReviewCard(name, text, rating));
+            if (!name || !text) return;
 
-            const savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
-            savedReviews.push({ name, text, rating });
+            // مراجعة جديدة
+            const newReview = { name, text, rating };
+
+            // حفظ المراجعة بالذاكرة المحلية
+            let savedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+            savedReviews.unshift(newReview); // إضافتها في البداية لتظهر أولاً
             localStorage.setItem('userReviews', JSON.stringify(savedReviews));
 
+            // إعادة تعيين الحقول
             document.getElementById('reviewForm').reset();
-            // إعادة النجوم إلى 5 بعد الإرسال
+            
+            // إعادة تعيين النجوم لـ 5 افتراضي
             stars.forEach(s => {
                 s.classList.remove('text-gray-600');
                 s.classList.add('text-[#FFD700]');
             });
-            ratingValueInput.value = 5;
+            document.getElementById('ratingValue').value = 5;
 
-            alert('تم نشر تقييمك تلقائياً وبكل أمانة! شكراً لك على مشاركتنا رأيك الصادق.');
+            // تحديث العرض فوراً
+            loadReviews();
         }
     </script>
 </body>
