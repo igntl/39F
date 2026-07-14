@@ -23,9 +23,9 @@
             font-family: 'Tajawal', sans-serif;
             background-color: #0B0C10;
         }
-        /* تأثيرات توهج الألوان النيون الساطعة للأرقام الثلاثة الأولى فقط */
+        /* تأثيرات توهج الألوان النيون الساطعة للأرقام والكلمات المحددة فقط */
         .neon-glow-blue {
-            text-shadow: 0 0 10px #00D2FF, 0 0 20px #00D2FF;
+            text-shadow: 0 0 10px #00D2FF, 0 0 20px #00D2FF, 0 0 30px #00D2FF;
         }
         .neon-glow-green {
             text-shadow: 0 0 10px #00FF66, 0 0 20px #00FF66;
@@ -68,10 +68,10 @@
         </button>
     </div>
 
-    <!-- الهيدر / شريط التنقل -->
+    <!-- الهيدر / شريط التنقل (تم إشعاع 39F STUDIO نيون هنا) -->
     <header class="sticky top-0 z-40 bg-[#0F111A]/90 backdrop-blur-md border-b border-[#1A2238]">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider text-[#00D2FF]">39F STUDIO</div>
+            <div class="text-2xl font-bold tracking-wider text-[#00D2FF] neon-glow-blue">39F STUDIO</div>
             <nav class="hidden md:flex space-x-reverse space-x-8 text-sm font-medium">
                 <a href="#hero" class="hover:text-[#00D2FF] transition">الرئيسية</a>
                 <a href="#web-services" class="hover:text-[#00D2FF] transition">تصميم المواقع</a>
@@ -85,22 +85,26 @@
         </div>
     </header>
 
-    <!-- القسم الرئيسي (Hero) مع خلفية مطر الأكواد وشريط الإنجازات -->
+    <!-- القسم الرئيسي (Hero) - تم إشعاع الاسم وواقع رقمي نيون هنا -->
     <section id="hero" class="relative py-24 md:py-36 bg-gradient-to-b from-[#0F111A] to-[#0B0C10] flex flex-col items-center justify-center text-center overflow-hidden">
         <div id="canvas-container">
             <canvas id="matrix-canvas"></canvas>
         </div>
         
         <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">نُبرمج خيالك إلى <span class="text-[#00D2FF]">واقع رقمي</span></h1>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">مرحباً بك في موقعنا هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.</p>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                نُبرمج خيالك إلى <span class="text-[#00D2FF] neon-glow-blue">واقع رقمي</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">
+                مرحباً بك في موقع <span class="text-[#00D2FF] font-bold neon-glow-blue">39F STUDIO</span>. هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق
+            </p>
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <a href="#pricing" class="bg-[#00D2FF] text-black px-8 py-3 rounded-xl font-bold hover:bg-white transition duration-300 shadow-lg shadow-[#00D2FF]/20">قائمة الأسعار</a>
                 <a href="#web-services" class="bg-[#1A2238] border border-gray-700 px-8 py-3 rounded-xl font-bold hover:border-[#00D2FF] transition duration-300">خدمات المواقع</a>
             </div>
         </div>
 
-        <!-- شريط الإنجازات السريع (Milestones Bar) - الأرقام الثلاثة الساطعة نيون فقط هنا -->
+        <!-- شريط الإنجازات السريع (Milestones Bar) -->
         <div class="w-full max-w-4xl mx-auto px-6 relative z-10">
             <div class="bg-[#0F111A]/80 backdrop-blur-sm border border-[#1A2238] rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center shadow-xl">
                 <div>
@@ -255,7 +259,7 @@
         </div>
     </section>
 
-    <!-- قسم نظام التقييمات وآراء العملاء التلقائي المشترك للجميع -->
+    <!-- قسم نظام التقييمات وآراء العملاء التلقائي -->
     <section id="reviews" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-12">
@@ -304,7 +308,7 @@
                     </form>
                 </div>
 
-                <!-- حاوية عرض التقييمات تلقائياً (تُجلب من السيرفر السحابي للكل) -->
+                <!-- حاوية عرض التقييمات تلقائياً -->
                 <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4" id="reviewsContainer">
                     <!-- التقييمات الافتراضية تظهر كبديل مؤقت لحين تحميل بيانات السيرفر -->
                 </div>
