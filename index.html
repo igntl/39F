@@ -23,7 +23,7 @@
             font-family: 'Tajawal', sans-serif;
             background-color: #0B0C10;
         }
-        /* تأثيرات توهج الألوان النيون الساطعة */
+        /* تأثيرات توهج الألوان النيون الساطعة للأرقام الثلاثة الأولى فقط */
         .neon-glow-blue {
             text-shadow: 0 0 10px #00D2FF, 0 0 20px #00D2FF;
         }
@@ -71,7 +71,7 @@
     <!-- الهيدر / شريط التنقل -->
     <header class="sticky top-0 z-40 bg-[#0F111A]/90 backdrop-blur-md border-b border-[#1A2238]">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider text-[#00D2FF] neon-glow-blue">39F STUDIO</div>
+            <div class="text-2xl font-bold tracking-wider text-[#00D2FF]">39F STUDIO</div>
             <nav class="hidden md:flex space-x-reverse space-x-8 text-sm font-medium">
                 <a href="#hero" class="hover:text-[#00D2FF] transition">الرئيسية</a>
                 <a href="#web-services" class="hover:text-[#00D2FF] transition">تصميم المواقع</a>
@@ -92,7 +92,7 @@
         </div>
         
         <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">نُبرمج خيالك إلى <span class="text-[#00D2FF] neon-glow-blue">واقع رقمي</span></h1>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">نُبرمج خيالك إلى <span class="text-[#00D2FF]">واقع رقمي</span></h1>
             <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">مرحباً بك في موقعنا هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.</p>
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <a href="#pricing" class="bg-[#00D2FF] text-black px-8 py-3 rounded-xl font-bold hover:bg-white transition duration-300 shadow-lg shadow-[#00D2FF]/20">قائمة الأسعار</a>
@@ -100,7 +100,7 @@
             </div>
         </div>
 
-        <!-- شريط الإنجازات السريع (Milestones Bar) -->
+        <!-- شريط الإنجازات السريع (Milestones Bar) - الأرقام الثلاثة الساطعة نيون فقط هنا -->
         <div class="w-full max-w-4xl mx-auto px-6 relative z-10">
             <div class="bg-[#0F111A]/80 backdrop-blur-sm border border-[#1A2238] rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center shadow-xl">
                 <div>
@@ -211,6 +211,7 @@
             <div>
                 <h3 class="text-xl font-bold text-[#00D2FF] text-center mb-8"><i class="fa-solid fa-robot ml-2"></i> خطط اشتراك البوتات</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- بوت تيكيتات متكامل (تمت إزالة النيون) -->
                     <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl text-center flex flex-col justify-between hover:border-[#00D2FF] transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت تيكيتات متكامل</h4>
@@ -218,11 +219,13 @@
                             <div class="space-y-2 my-6 bg-[#0B0C10] p-4 rounded-xl border border-gray-800">
                                 <div class="flex justify-between items-center text-sm"><span class="text-gray-400">شهري:</span> <span class="font-bold text-[#00D2FF]">25 ريال / شهر</span></div>
                                 <div class="border-t border-gray-800 my-2"></div>
-                                <div class="flex justify-between items-center text-sm"><span class="text-gray-400">مؤبد مدى الحياة:</span> <span class="font-bold text-[#00FF66] neon-glow-green">100 ريال مرة واحدة</span></div>
+                                <div class="flex justify-between items-center text-sm"><span class="text-gray-400">مؤبد مدى الحياة:</span> <span class="font-bold text-[#00FF66]">100 ريال مرة واحدة</span></div>
                             </div>
                         </div>
                         <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">طلب البوت</a>
                     </div>
+                    
+                    <!-- بوت حماية متكامل (تمت إزالة النيون) -->
                     <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl text-center flex flex-col justify-between hover:border-[#00D2FF] transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت حماية متكامل</h4>
@@ -230,16 +233,18 @@
                             <div class="space-y-2 my-6 bg-[#0B0C10] p-4 rounded-xl border border-gray-800">
                                 <div class="flex justify-between items-center text-sm"><span class="text-gray-400">شهري:</span> <span class="font-bold text-[#00D2FF]">25 ريال / شهر</span></div>
                                 <div class="border-t border-gray-800 my-2"></div>
-                                <div class="flex justify-between items-center text-sm"><span class="text-gray-400">مؤبد مدى الحياة:</span> <span class="font-bold text-[#00FF66] neon-glow-green">100 ريال مرة واحدة</span></div>
+                                <div class="flex justify-between items-center text-sm"><span class="text-gray-400">مؤبد مدى الحياة:</span> <span class="font-bold text-[#00FF66]">100 ريال مرة واحدة</span></div>
                             </div>
                         </div>
                         <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">طلب البوت</a>
                     </div>
+                    
+                    <!-- بوت خاص حسب الطلب (تمت إزالة النيون) -->
                     <div class="bg-[#0F111A] border border-purple-500/30 p-8 rounded-2xl text-center flex flex-col justify-between hover:border-purple-500 transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت خاص (حسب الطلب)</h4>
                             <p class="text-xs text-gray-500 mb-4">برمجة فكرة مخصصة بالكامل من الصفر</p>
-                            <div class="text-lg font-bold text-[#B026FF] neon-glow-purple my-10 bg-[#0B0C10] py-4 rounded-xl border border-gray-800">
+                            <div class="text-lg font-bold text-[#B026FF] my-10 bg-[#0B0C10] py-4 rounded-xl border border-gray-800">
                                 السعر والاشتراك يحدد بعد الاتفاق
                             </div>
                         </div>
