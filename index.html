@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المطور عصف | بوتات ديسكورد وتصميم مواقع</title>
+    <title>39F STUDIO | بوتات ديسكورد وتصميم مواقع</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- تضمين مكتبات Firebase الرسمية لعرض التقييمات للجميع -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -18,8 +23,15 @@
             font-family: 'Tajawal', sans-serif;
             background-color: #0B0C10;
         }
-        .neon-glow {
+        /* تأثيرات توهج الألوان النيون الساطعة */
+        .neon-glow-blue {
             text-shadow: 0 0 10px #00D2FF, 0 0 20px #00D2FF;
+        }
+        .neon-glow-green {
+            text-shadow: 0 0 10px #00FF66, 0 0 20px #00FF66;
+        }
+        .neon-glow-purple {
+            text-shadow: 0 0 10px #B026FF, 0 0 20px #B026FF;
         }
         .neon-border:hover {
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
@@ -59,7 +71,7 @@
     <!-- الهيدر / شريط التنقل -->
     <header class="sticky top-0 z-40 bg-[#0F111A]/90 backdrop-blur-md border-b border-[#1A2238]">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider text-[#00D2FF] neon-glow">39F STUDIO</div>
+            <div class="text-2xl font-bold tracking-wider text-[#00D2FF] neon-glow-blue">39F STUDIO</div>
             <nav class="hidden md:flex space-x-reverse space-x-8 text-sm font-medium">
                 <a href="#hero" class="hover:text-[#00D2FF] transition">الرئيسية</a>
                 <a href="#web-services" class="hover:text-[#00D2FF] transition">تصميم المواقع</a>
@@ -80,8 +92,8 @@
         </div>
         
         <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">نُبرمج خيالك إلى <span class="text-[#00D2FF] neon-glow">واقع رقمي</span></h1>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">مرحباً بك في موقع المطور عصف. هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.</p>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">نُبرمج خيالك إلى <span class="text-[#00D2FF] neon-glow-blue">واقع رقمي</span></h1>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">مرحباً بك في موقعنا هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.</p>
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <a href="#pricing" class="bg-[#00D2FF] text-black px-8 py-3 rounded-xl font-bold hover:bg-white transition duration-300 shadow-lg shadow-[#00D2FF]/20">قائمة الأسعار</a>
                 <a href="#web-services" class="bg-[#1A2238] border border-gray-700 px-8 py-3 rounded-xl font-bold hover:border-[#00D2FF] transition duration-300">خدمات المواقع</a>
@@ -92,15 +104,15 @@
         <div class="w-full max-w-4xl mx-auto px-6 relative z-10">
             <div class="bg-[#0F111A]/80 backdrop-blur-sm border border-[#1A2238] rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center shadow-xl">
                 <div>
-                    <div class="text-3xl font-bold text-[#00D2FF] neon-glow mb-1" id="count-servers">0</div>
+                    <div class="text-3xl font-bold text-[#00D2FF] neon-glow-blue mb-1" id="count-servers">0</div>
                     <div class="text-xs text-gray-400">إجمالي السيرفرات المحمية بالكامل</div>
                 </div>
                 <div class="border-t md:border-t-0 md:border-r border-[#1A2238] pt-4 md:pt-0 md:pr-6">
-                    <div class="text-3xl font-bold text-green-400 mb-1" id="count-members">0</div>
+                    <div class="text-3xl font-bold text-[#00FF66] neon-glow-green mb-1" id="count-members">0</div>
                     <div class="text-xs text-gray-400">أعضاء نشطون تحت حماية بوتاتنا</div>
                 </div>
                 <div class="border-t md:border-t-0 md:border-r border-[#1A2238] pt-4 md:pt-0 md:pr-6">
-                    <div class="text-3xl font-bold text-purple-400 mb-1" id="count-stability">0</div>
+                    <div class="text-3xl font-bold text-[#B026FF] neon-glow-purple mb-1" id="count-stability">0</div>
                     <div class="text-xs text-gray-400">نسبة استقرار الخوادم والحماية التلقائية</div>
                 </div>
             </div>
@@ -144,7 +156,6 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-8 rounded-2xl relative">
-                    <span class="absolute top-4 left-4 bg-[#00D2FF] text-black text-xs font-bold px-3 py-1 rounded-full">تطوير عصف</span>
                     <div class="text-[#5865F2] text-4xl mb-4"><i class="fa-solid fa-ticket"></i></div>
                     <h3 class="text-2xl font-bold text-white mb-3">بوت التيكيتات الذكي (Ticket Bot)</h3>
                     <p class="text-gray-400 text-sm leading-relaxed mb-4">نظام الدعم الفني المتكامل داخل سيرفرك. يتيح للأعضاء فتح تذاكر بضغطة زر عبر الأزرار (Buttons) والقوائم المنسدلة، مع ميزة حفظ السجلات (Logs) وإرسالها مباشرة للإدارة.</p>
@@ -190,7 +201,7 @@
                 <div class="flex items-center flex-col md:flex-row gap-4 mb-4 md:mb-0">
                     <div class="text-[#FFD700] text-4xl gold-glow"><i class="fa-solid fa-shield-cat"></i></div>
                     <div>
-                        <h4 class="text-lg font-bold text-[#FFD700] mb-1">الضمان الذهبي من عصف</h4>
+                        <h4 class="text-lg font-bold text-[#FFD700] mb-1">الضمان الذهبي</h4>
                         <p class="text-gray-300 text-sm">راحتك تهمنا أي مشكلة أو خلل برمجي يواجهه العميل في البوت نلتزم بحله فوراً، أو نسترجع لك المبلغ كاملاً بدون أي تعقيد.</p>
                     </div>
                 </div>
@@ -207,7 +218,7 @@
                             <div class="space-y-2 my-6 bg-[#0B0C10] p-4 rounded-xl border border-gray-800">
                                 <div class="flex justify-between items-center text-sm"><span class="text-gray-400">شهري:</span> <span class="font-bold text-[#00D2FF]">25 ريال / شهر</span></div>
                                 <div class="border-t border-gray-800 my-2"></div>
-                                <div class="flex justify-between items-center text-sm"><span class="text-gray-400">مؤبد مدى الحياة:</span> <span class="font-bold text-green-400">100 ريال مرة واحدة</span></div>
+                                <div class="flex justify-between items-center text-sm"><span class="text-gray-400">مؤبد مدى الحياة:</span> <span class="font-bold text-[#00FF66] neon-glow-green">100 ريال مرة واحدة</span></div>
                             </div>
                         </div>
                         <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">طلب البوت</a>
@@ -219,7 +230,7 @@
                             <div class="space-y-2 my-6 bg-[#0B0C10] p-4 rounded-xl border border-gray-800">
                                 <div class="flex justify-between items-center text-sm"><span class="text-gray-400">شهري:</span> <span class="font-bold text-[#00D2FF]">25 ريال / شهر</span></div>
                                 <div class="border-t border-gray-800 my-2"></div>
-                                <div class="flex justify-between items-center text-sm"><span class="text-gray-400">مؤبد مدى الحياة:</span> <span class="font-bold text-green-400">100 ريال مرة واحدة</span></div>
+                                <div class="flex justify-between items-center text-sm"><span class="text-gray-400">مؤبد مدى الحياة:</span> <span class="font-bold text-[#00FF66] neon-glow-green">100 ريال مرة واحدة</span></div>
                             </div>
                         </div>
                         <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">طلب البوت</a>
@@ -228,7 +239,7 @@
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت خاص (حسب الطلب)</h4>
                             <p class="text-xs text-gray-500 mb-4">برمجة فكرة مخصصة بالكامل من الصفر</p>
-                            <div class="text-lg font-bold text-purple-400 my-10 bg-[#0B0C10] py-4 rounded-xl border border-gray-800">
+                            <div class="text-lg font-bold text-[#B026FF] neon-glow-purple my-10 bg-[#0B0C10] py-4 rounded-xl border border-gray-800">
                                 السعر والاشتراك يحدد بعد الاتفاق
                             </div>
                         </div>
@@ -239,17 +250,17 @@
         </div>
     </section>
 
-    <!-- قسم نظام التقييمات وآراء العملاء التلقائي -->
+    <!-- قسم نظام التقييمات وآراء العملاء التلقائي المشترك للجميع -->
     <section id="reviews" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white mb-2">آراء العملاء</h2>
-                <p class="text-gray-400 mb-6">ماذا يقول أصحاب السيرفرات عن مهارات عصف البرمجية</p>
+                <p class="text-gray-400 mb-6">ماذا يقول أصحاب السيرفرات عن مهاراتنا البرمجية</p>
                 
                 <div class="inline-block bg-[#0F111A] border border-yellow-500/30 p-4 rounded-xl max-w-2xl text-center shadow-md mb-8">
                     <p class="text-sm text-gray-300 leading-relaxed">
                         <i class="fa-solid fa-scale-balanced text-yellow-500 ml-2"></i>
-                        أموالك أمانة، ورأيك أمانة نرجو من جميع عملائنا كتابة تقييماتهم <span class="text-yellow-400 font-bold">بكل ذمة وضمير</span> بعد تجربة الخدمة، سواء كانت تجربتك ممتازة أو واجهت فيها سلبيات؛ فرأيك الصادق هو اللي يطورنا.
+                        أموالك أمانة، ورأيك أمانة نرجو من جميع عملائنا كتابة تقييماتهم <span class="text-yellow-400 font-bold">بكل ذمة وضمير</span> بعد تجربة الخدمة، رأيك يظهر للجميع فوراً.
                     </p>
                 </div>
             </div>
@@ -288,30 +299,9 @@
                     </form>
                 </div>
 
-                <!-- حاوية عرض التقييمات تلقائياً -->
+                <!-- حاوية عرض التقييمات تلقائياً (تُجلب من السيرفر السحابي للكل) -->
                 <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4" id="reviewsContainer">
-                    <!-- التقييمات الافتراضية الثابتة -->
-                    <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
-                        <p class="text-xs text-gray-300 italic mb-4">"بوت التيكيتات من أفضل البوتات اللي جربتها بسيرفري سرعة خيالية في الاستجابة والأزرار منسقة بشكل احترافي جداً."</p>
-                        <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
-                            <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
-                            <div>
-                                <h5 class="text-xs font-bold text-white">iX_Knight</h5>
-                                <div class="text-[#FFD700] text-[10px]"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
-                        <p class="text-xs text-gray-300 italic mb-4">"سيرفري كان يجيه لتخريب بشكل مستمر، لكن بعد تفعيل بوت الحماية من عصف صار السيرفر أمان 100%."</p>
-                        <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
-                            <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
-                            <div>
-                                <h5 class="text-xs font-bold text-white">Faisal_99</h5>
-                                <div class="text-[#FFD700] text-[10px]"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- التقييمات الافتراضية تظهر كبديل مؤقت لحين تحميل بيانات السيرفر -->
                 </div>
             </div>
         </div>
@@ -349,7 +339,7 @@
     <!-- قسم طرق التواصل -->
     <section id="contact" class="py-20 bg-[#0B0C10] border-t border-[#1A2238]">
         <div class="container mx-auto px-6 text-center max-w-3xl">
-            <h2 class="text-3xl font-bold text-white mb-2">ابدأ مشروعك الآن مع عصف</h2>
+            <h2 class="text-3xl font-bold text-white mb-2">ابدأ مشروعك الآن معنا</h2>
             <p class="text-gray-400 mb-12">تواصل معي مباشرة عبر إحدى المنصات التالية لمناقشة تفاصيل مشروعك</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -375,12 +365,27 @@
     <!-- الفوتر -->
     <footer class="bg-[#0F111A] py-6 text-center text-xs text-gray-500 border-t border-[#1A2238]">
         <div class="container mx-auto px-6">
-            <p>&copy; 2026 عصف. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2026 جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <!-- برمجيات ومؤثرات الموقع التفاعلية JavaScript -->
     <script>
+        // إعدادات الـ Firebase الخاصة بـموقعك المشتركة للجميع
+        const firebaseConfig = {
+            apiKey: "AIzaSyBl6QEtQuTrK0w2vTDrNx7l1l7-gn3Uzr8",
+            authDomain: "f-studio-9fd1f.firebaseapp.com",
+            databaseURL: "أدخل_رابط_قاعدة_البيانات_هنا",
+            projectId: "f-studio-9fd1f",
+            storageBucket: "f-studio-9fd1f.firebasestorage.app",
+            messagingSenderId: "651675901108",
+            appId: "1:651675901108:web:09a8c1fbe95c3f2e22cbe1"
+        };
+        
+        // تشغيل البنية التحتية لـ Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
         function closeDhikr() {
             const popup = document.getElementById('dhikr-popup');
             popup.style.opacity = '0';
@@ -421,7 +426,7 @@
         }
         setInterval(drawMatrix, 30);
 
-        // دالة العداد المتحرك بعد التعديل (تشتغل تلقائياً فور فتح الصفحة)
+        // دالة العداد المتحرك
         function animateCounters() {
             const counters = [
                 { id: 'count-servers', target: 671, prefix: '+', suffix: '' },
@@ -459,7 +464,7 @@
             });
         }
 
-        // كود نظام اختيار النجوم التفاعلي المصلح والمحمي
+        // نظام اختيار النجوم التفاعلي
         const stars = document.querySelectorAll('.star-btn');
         const ratingValueInput = document.getElementById('ratingValue');
 
@@ -481,7 +486,7 @@
             });
         });
 
-        // نظام معالجة وحفظ التقييمات التفاعلي الجديد
+        // إرسال التقييم وحفظه في السيرفر السحابي ( Firebase ) ليراه الجميع
         function submitReview(event) {
             event.preventDefault();
             
@@ -491,18 +496,14 @@
             
             if(!name || !text) return;
 
-            // إنشاء كائن المراجعة الجديد
-            const newReview = { name, text, rating };
+            // دفع البيانات للسيرفر
+            database.ref('reviews').push({
+                name: name,
+                text: text,
+                rating: rating,
+                timestamp: Date.now()
+            });
 
-            // جلب المراجعات المخزنة مسبقاً أو إنشاء مصفوفة جديدة
-            let localReviews = JSON.parse(localStorage.getItem('user_reviews')) || [];
-            localReviews.push(newReview);
-            localStorage.setItem('user_reviews', JSON.stringify(localReviews));
-
-            // إضافة التقييم إلى الواجهة فوراً
-            appendReviewToDOM(newReview);
-
-            // إعادة تعيين الحقول وإرجاع النجوم لـ 5 نجوم تلقائياً
             document.getElementById('reviewForm').reset();
             ratingValueInput.value = 5;
             stars.forEach(s => {
@@ -511,52 +512,62 @@
             });
         }
 
-        function appendReviewToDOM(review) {
+        // جلب البيانات بشكل حي ومباشر لكل زوار الموقع
+        function listenForReviews() {
             const container = document.getElementById('reviewsContainer');
-            if(!container) return;
-
-            // بناء كود النجوم الذهبية بناءً على التقييم المختار
-            let starsHTML = '';
-            for(let i = 1; i <= 5; i++) {
-                if(i <= review.rating) {
-                    starsHTML += '<i class="fa-solid fa-star"></i>';
-                } else {
-                    starsHTML += '<i class="fa-regular fa-star text-gray-600"></i>';
-                }
-            }
-
-            const reviewElement = document.createElement('div');
-            reviewElement.className = "bg-[#0F111A] border border-[#00D2FF]/30 p-5 rounded-2xl flex flex-col justify-between shadow-lg shadow-[#00D2FF]/5 animate-pulse";
-            reviewElement.innerHTML = `
-                <p class="text-xs text-gray-300 italic mb-4">"${review.text}"</p>
-                <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
-                    <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
-                    <div>
-                        <h5 class="text-xs font-bold text-white">${review.name}</h5>
-                        <div class="text-[#FFD700] text-[10px]">${starsHTML}</div>
+            
+            database.ref('reviews').orderByChild('timestamp').on('value', (snapshot) => {
+                container.innerHTML = ''; // تصفير الحاوية وإعادة البناء الحي
+                
+                // إضافة التقييمات التلقائية الثابتة أولاً كدعم للمظهر
+                const defaultReviewsHTML = `
+                    <div class="bg-[#0F111A] border border-[#1A2238] p-5 rounded-2xl flex flex-col justify-between">
+                        <p class="text-xs text-gray-300 italic mb-4">"بوت التيكيتات من أفضل البوتات اللي جربتها بسيرفري سرعة خيالية في الاستجابة والأزرار منسقة بشكل احترافي جداً."</p>
+                        <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
+                            <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
+                            <div>
+                                <h5 class="text-xs font-bold text-white">iX_Knight</h5>
+                                <div class="text-[#FFD700] text-[10px]"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            `;
-            
-            // إدراج التقييم الجديد في البداية ليكون أول عنصر يظهر
-            container.insertBefore(reviewElement, container.firstChild);
-            
-            // إزالة تأثير النبض بعد ثانية واحدة
-            setTimeout(() => { reviewElement.classList.remove('animate-pulse'); }, 1000);
-        }
+                `;
+                container.innerHTML = defaultReviewsHTML;
 
-        function loadReviews() {
-            // تحميل المراجعات المحفوظة في الـ LocalStorage عند فتح الصفحة
-            const localReviews = JSON.parse(localStorage.getItem('user_reviews')) || [];
-            localReviews.forEach(review => {
-                appendReviewToDOM(review);
+                // معالجة وحقن البيانات القادمة من السيرفر
+                snapshot.forEach((childSnapshot) => {
+                    const review = childSnapshot.val();
+                    
+                    let starsHTML = '';
+                    for(let i = 1; i <= 5; i++) {
+                        if(i <= review.rating) {
+                            starsHTML += '<i class="fa-solid fa-star"></i>';
+                        } else {
+                            starsHTML += '<i class="fa-regular fa-star text-gray-600"></i>';
+                        }
+                    }
+
+                    const reviewCard = document.createElement('div');
+                    reviewCard.className = "bg-[#0F111A] border border-[#00D2FF]/30 p-5 rounded-2xl flex flex-col justify-between shadow-lg shadow-[#00D2FF]/5";
+                    reviewCard.innerHTML = `
+                        <p class="text-xs text-gray-300 italic mb-4">"${review.text}"</p>
+                        <div class="flex items-center gap-3 border-t border-[#1A2238] pt-3">
+                            <div class="w-8 h-8 rounded-full bg-[#1A2238] flex items-center justify-center text-[#00D2FF] text-sm"><i class="fa-brands fa-discord"></i></div>
+                            <div>
+                                <h5 class="text-xs font-bold text-white">${review.name}</h5>
+                                <div class="text-[#FFD700] text-[10px]">${starsHTML}</div>
+                            </div>
+                        </div>
+                    `;
+                    // جعل التقييم الجديد يظهر في الأعلى
+                    container.insertBefore(reviewCard, container.firstChild);
+                });
             });
         }
 
-        // تشغيل الوظائف عند تحميل الصفحة بالكامل
         window.onload = function() {
             animateCounters();
-            loadReviews();
+            listenForReviews();
         };
     </script>
 </body>
