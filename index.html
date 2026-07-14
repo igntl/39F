@@ -23,7 +23,7 @@
             font-family: 'Tajawal', sans-serif;
             background-color: #0B0C10;
         }
-        /* تأثير النيون الحصري لشعار الزاوية فقط */
+        /* تأثير النيون الحصري لشعار الزاوية ورقم العداد فقط */
         .corner-neon-glow {
             text-shadow: 0 0 10px #00D2FF, 0 0 20px #00D2FF, 0 0 30px #00D2FF;
         }
@@ -55,7 +55,7 @@
 </head>
 <body class="text-gray-200 antialiased">
 
-    <!-- نافذة التذكير بذكر الله (Popup) -->
+    <!--- تفاعل ذكي لتنبيه بذكر الله --->
     <div id="dhikr-popup" class="fixed bottom-6 right-6 z-50 max-w-sm w-full mx-auto bg-[#0F111A] border-2 border-[#00D2FF]/30 p-5 rounded-2xl shadow-2xl shadow-[#00D2FF]/10 flex items-start gap-4 transition-all duration-500 transform translate-y-0 opacity-100">
         <div class="text-[#00D2FF] text-2xl mt-1">
             <i class="fa-solid fa-heart"></i>
@@ -86,7 +86,7 @@
         </div>
     </header>
 
-    <!-- القسم الرئيسي (Hero) - تم تعديل النصوص وإلغاء النيون هنا -->
+    <!-- القسم الرئيسي (Hero) - تم تعديل لون واقع رقمي للكحلي -->
     <section id="hero" class="relative py-24 md:py-36 bg-gradient-to-b from-[#0F111A] to-[#0B0C10] flex flex-col items-center justify-center text-center overflow-hidden">
         <div id="canvas-container">
             <canvas id="matrix-canvas"></canvas>
@@ -94,10 +94,10 @@
         
         <div class="container mx-auto px-6 relative z-10">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-                نُبرمج خيالك إلى <span class="text-white">واقع رقمي</span>
+                نُبرمج خيالك إلى <span class="text-[#0055ff] font-extrabold">واقع رقمي</span>
             </h1>
             <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">
-                مرحباً بك في موقع <span class="text-white font-bold">عصف</span>. هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق
+                مرحباً بك في موقع <span class="text-white font-bold">39F STUDIO</span>. هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق.
             </p>
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <a href="#pricing" class="bg-[#00D2FF] text-black px-8 py-3 rounded-xl font-bold hover:bg-white transition duration-300 shadow-lg shadow-[#00D2FF]/20">قائمة الأسعار</a>
@@ -105,11 +105,11 @@
             </div>
         </div>
 
-        <!-- شريط الإنجازات السريع (Milestones Bar) -->
+        <!-- شريط الإنجازات السريع (Milestones Bar) - العداد الأول عاد للنيون الأزرق -->
         <div class="w-full max-w-4xl mx-auto px-6 relative z-10">
             <div class="bg-[#0F111A]/80 backdrop-blur-sm border border-[#1A2238] rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center shadow-xl">
                 <div>
-                    <div class="text-3xl font-bold text-[#00D2FF] mb-1" id="count-servers">0</div>
+                    <div class="text-3xl font-bold text-[#00D2FF] corner-neon-glow mb-1" id="count-servers">0</div>
                     <div class="text-xs text-gray-400">إجمالي السيرفرات المحمية بالكامل</div>
                 </div>
                 <div class="border-t md:border-t-0 md:border-r border-[#1A2238] pt-4 md:pt-0 md:pr-6">
