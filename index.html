@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>39F STUDIO | بوتات ديسكورد وتصميم مواقع</title>
+    <title>39F STUDIO | عصف - بوتات ديسكورد وتصميم مواقع</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -23,10 +23,11 @@
             font-family: 'Tajawal', sans-serif;
             background-color: #0B0C10;
         }
-        /* تأثيرات توهج الألوان النيون الساطعة للأرقام والكلمات المحددة فقط */
-        .neon-glow-blue {
+        /* تأثير النيون الحصري لشعار الزاوية فقط */
+        .corner-neon-glow {
             text-shadow: 0 0 10px #00D2FF, 0 0 20px #00D2FF, 0 0 30px #00D2FF;
         }
+        /* الألوان العادية لبقية الأرقام للمحافظة على التنسيق */
         .neon-glow-green {
             text-shadow: 0 0 10px #00FF66, 0 0 20px #00FF66;
         }
@@ -68,10 +69,10 @@
         </button>
     </div>
 
-    <!-- الهيدر / شريط التنقل (تم إشعاع 39F STUDIO نيون هنا) -->
+    <!-- الهيدر / شريط التنقل (تأثير النيون حصري هنا فقط في الزاوية) -->
     <header class="sticky top-0 z-40 bg-[#0F111A]/90 backdrop-blur-md border-b border-[#1A2238]">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider text-[#00D2FF] neon-glow-blue">39F STUDIO</div>
+            <div class="text-2xl font-bold tracking-wider text-[#00D2FF] corner-neon-glow">39F STUDIO</div>
             <nav class="hidden md:flex space-x-reverse space-x-8 text-sm font-medium">
                 <a href="#hero" class="hover:text-[#00D2FF] transition">الرئيسية</a>
                 <a href="#web-services" class="hover:text-[#00D2FF] transition">تصميم المواقع</a>
@@ -85,7 +86,7 @@
         </div>
     </header>
 
-    <!-- القسم الرئيسي (Hero) - تم إشعاع الاسم وواقع رقمي نيون هنا -->
+    <!-- القسم الرئيسي (Hero) - تم تعديل النصوص وإلغاء النيون هنا -->
     <section id="hero" class="relative py-24 md:py-36 bg-gradient-to-b from-[#0F111A] to-[#0B0C10] flex flex-col items-center justify-center text-center overflow-hidden">
         <div id="canvas-container">
             <canvas id="matrix-canvas"></canvas>
@@ -93,10 +94,10 @@
         
         <div class="container mx-auto px-6 relative z-10">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-                نُبرمج خيالك إلى <span class="text-[#00D2FF] neon-glow-blue">واقع رقمي</span>
+                نُبرمج خيالك إلى <span class="text-white">واقع رقمي</span>
             </h1>
             <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">
-                مرحباً بك في موقع <span class="text-[#00D2FF] font-bold neon-glow-blue">39F STUDIO</span>. هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق
+                مرحباً بك في موقع <span class="text-white font-bold">عصف</span>. هنا نجمع بين الاحترافية في برمجة بوتات الديسكورد المتطورة وتصميم مواقع الويب العصرية ذات الأداء الخارق
             </p>
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <a href="#pricing" class="bg-[#00D2FF] text-black px-8 py-3 rounded-xl font-bold hover:bg-white transition duration-300 shadow-lg shadow-[#00D2FF]/20">قائمة الأسعار</a>
@@ -108,7 +109,7 @@
         <div class="w-full max-w-4xl mx-auto px-6 relative z-10">
             <div class="bg-[#0F111A]/80 backdrop-blur-sm border border-[#1A2238] rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center shadow-xl">
                 <div>
-                    <div class="text-3xl font-bold text-[#00D2FF] neon-glow-blue mb-1" id="count-servers">0</div>
+                    <div class="text-3xl font-bold text-[#00D2FF] mb-1" id="count-servers">0</div>
                     <div class="text-xs text-gray-400">إجمالي السيرفرات المحمية بالكامل</div>
                 </div>
                 <div class="border-t md:border-t-0 md:border-r border-[#1A2238] pt-4 md:pt-0 md:pr-6">
@@ -215,7 +216,7 @@
             <div>
                 <h3 class="text-xl font-bold text-[#00D2FF] text-center mb-8"><i class="fa-solid fa-robot ml-2"></i> خطط اشتراك البوتات</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- بوت تيكيتات متكامل (تمت إزالة النيون) -->
+                    <!-- بوت تيكيتات متكامل -->
                     <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl text-center flex flex-col justify-between hover:border-[#00D2FF] transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت تيكيتات متكامل</h4>
@@ -229,7 +230,7 @@
                         <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">طلب البوت</a>
                     </div>
                     
-                    <!-- بوت حماية متكامل (تمت إزالة النيون) -->
+                    <!-- بوت حماية متكامل -->
                     <div class="bg-[#0F111A] border border-[#1A2238] p-8 rounded-2xl text-center flex flex-col justify-between hover:border-[#00D2FF] transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت حماية متكامل</h4>
@@ -243,7 +244,7 @@
                         <a href="https://wa.me/message/4LLIAIQVPKMQE1" target="_blank" class="block w-full bg-[#1A2238] border border-[#00D2FF] text-[#00D2FF] py-2 rounded-xl font-bold hover:bg-[#00D2FF] hover:text-black transition">طلب البوت</a>
                     </div>
                     
-                    <!-- بوت خاص حسب الطلب (تمت إزالة النيون) -->
+                    <!-- بوت خاص حسب الطلب -->
                     <div class="bg-[#0F111A] border border-purple-500/30 p-8 rounded-2xl text-center flex flex-col justify-between hover:border-purple-500 transition">
                         <div>
                             <h4 class="text-xl font-bold text-white mb-2">بوت خاص (حسب الطلب)</h4>
@@ -330,16 +331,16 @@
                     <p class="text-gray-400 text-sm pr-7 leading-relaxed">نعم، جميع البوتات يتم استضافتها على خوادم خاصة قوية ومستقرة تضمن عمل البوتات بنسبة 99.9% طوال اليوم والأسبوع وبدون أي بطء في الاستجابة.</p>
                 </div>
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
-                    <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> كيف يمكنني تفعيل البوت بعد الشراء?</h4>
+                    <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> كيف يمكنني تفعيل البوت بعد الشراء؟</h4>
                     <p class="text-gray-400 text-sm pr-7 leading-relaxed">بعد إتمام عملية الدفع (شهري أو مؤبد)، سنتواصل معك مباشرة لتسليمك التوكن الخاص بالبوت وإضافته لسيرفرك فوراً مع شرح كامل لكيفية لوحة التحكم والإعدادات.</p>
                 </div>
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
                     <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> ماذا يشمل الضمان الذهبي بالضبط؟</h4>
-                    <p class="text-gray-400 text-sm pr-7 leading-relaxed">الضمان يشمل أي مشكلة تقنية أو توقف غير متوقع أو خطأ برمجي داخل البوت فريقنا سيتولى حل المشكلة مجاناً وبأسرع وقت، وفي حال عدم رضاك أو تعذر الحل نسترجع لك كامل المبلغ المدفوع فوراً.</p>
+                    <p class="text-gray-400 text-sm pr-7 leading-relaxed">الضمان يشمل أي مشكلة تقنية أو توقف غير متوقع أو خطأ برمجي داخل البوت. فريقنا سيتولى حل المشكلة مجاناً وبأسرع وقت، وفي حال عدم رضاك أو تعذر الحل نسترجع لك كامل المبلغ المدفوع فوراً.</p>
                 </div>
                 <div class="bg-[#0B0C10] border border-[#1A2238] p-6 rounded-2xl">
                     <h4 class="text-base font-bold text-white mb-3 flex items-center"><i class="fa-solid fa-circle-question text-[#00D2FF] ml-3"></i> هل يمكنني الترقية من الاشتراك الشهري إلى المؤبد لاحقاً؟</h4>
-                    <p class="text-gray-400 text-sm pr-7 leading-relaxed">اكيد تقدر تجرب البوت بالاشتراك الشهري أولاً، وفي أي وقت ترغب فيه بتحويله إلى اشتراك مؤبد مدى الحياة، يمكنك التواصل معنا وترقية خطتك بكل سهولة.</p>
+                    <p class="text-gray-400 text-sm pr-7 leading-relaxed">أكيد، تقدر تجرب البوت بالاشتراك الشهري أولاً، وفي أي وقت ترغب فيه بتحويله إلى اشتراك مؤبد مدى الحياة، يمكنك التواصل معنا وترقية خطتك بكل سهولة.</p>
                 </div>
             </div>
         </div>
